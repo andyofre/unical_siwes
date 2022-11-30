@@ -78,7 +78,7 @@
                         @endif
                     </div>
                     <div class="card-body">
-                        <form action="{{route('adminuploadform')}}" method="POST">
+                        <form action="{{route('adminuploadform')}}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="col-md-10">

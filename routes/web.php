@@ -7,6 +7,8 @@ use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 use App\Models\Payment;
 use App\Http\Controllers\LetterController;
 use App\Http\Controllers\SiwesPaymentController;
+use App\Http\Controllers\StudentsController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -115,7 +117,10 @@ Route::middleware(['auth', 'student', 'admin'])->prefix('/student')->name('stude
 
     Route::get('siwes/form', [\App\Http\Controllers\StudentsController::class, 'readForm'])->name('uploading');
 
-    Route::get('form/download{id}', [\App\Http\Controllers\StudentsController::class, 'preview'])->name('file.download');
+
+    Route::get('form/preview{id}', [\App\Http\Controllers\StudentsController::class, 'preview'])->name('preview.file');
+
+    Route::get('form/download{pdf_file}', [\App\Http\Controllers\StudentsController::class, 'download'])->name('file.download');
 
 
 });

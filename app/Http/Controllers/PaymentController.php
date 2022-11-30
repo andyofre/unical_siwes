@@ -124,21 +124,15 @@ class PaymentController extends Controller
                 "id": '.$id.',
                 "webhook_source":"siwes_fee"
                 },
-            "split": {
-              "type": "flat",
-              "beare`r_type": "account",
-              "subaccounts": [
-                {
-                  "subaccount": "ACCT_2hwidwz5y9atbvn",
-                  "share": 2500000
-
-                },
-                  {
-                  "subaccount": "ACCT_g2u50d34647qn29",
-                  "share": 100000
-                }
-              ]
-
+                "split": {
+                    "type": "flat",
+                    "bearer_type": "account",
+                    "subaccounts": [
+                    {
+                        "subaccount": "ACCT_2hwidwz5y9atbvn",
+                        "share": 3000000
+                    }
+                ]
             }
           }',
             CURLOPT_HTTPHEADER => array(

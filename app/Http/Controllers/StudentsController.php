@@ -267,9 +267,20 @@ class StudentsController extends Controller
     {
         //
         $student = AuthHelper::student();
-        $pdf = Upload::find($id);
 
-        return view('backend.students.forms.preview', compact('pdf', 'student'));
+        // dd($student);
+
+        $data = Upload::find($id);
+
+
+        return view('backend.students.forms.preview', compact('data', 'student'));
+    }
+
+
+    public function download(Request $request, $pdf_file){
+
+
+        return response()->download(public_path('assets/'.$pdf_file));
     }
     /**
      * Store a newly created resource in storage.

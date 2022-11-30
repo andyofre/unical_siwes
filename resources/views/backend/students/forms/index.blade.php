@@ -34,17 +34,17 @@
                                 <tbody>
 
 
-                                    @foreach($upload as $pdf)
+                                    @foreach($upload as $data)
 
                                     <tr>
-                                        <td>{{$pdf->id}}</td>
-                                        <td>{{$pdf->file_name}}</td>
-                                        <td>{{$pdf->description}}</td>
+                                        <td>{{$data->id}}</td>
+                                        <td>{{$data->file_name}}</td>
+                                        <td>{{$data->description}}</td>
 
 
                                         <td>
-                                            <a href="{{route('studentfile.download', $pdf->pdf_file)}}" class="btn" style="text-decoration: underline; color:#0b4980" target="_blank">Preview</a>
-                                            <a href="" class="btn" style="text-decoration: underline; color:#0b4980">Download</a>
+                                            <a href="{{ route('studentpreview.file', $data->id) }}" class="btn" style="text-decoration: underline; color:#0b4980" target="_blank">Preview</a>
+                                            <a href="{{route('studentfile.download', $data->pdf_file)}}" class="btn" style="text-decoration: underline; color:#0b4980">Download</a>
                                         </td>
                                     </tr>
 

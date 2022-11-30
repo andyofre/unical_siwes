@@ -16,6 +16,7 @@ class AdminStudentController extends Controller
     {
         $students = Student::paginate(10);
         return view('backend.admin.students.index', compact('students'));
+
     }
 
     /**

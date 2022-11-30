@@ -87,11 +87,11 @@ class AdminController extends Controller
         $data->file_name = $request->file_name;
         $data->description = $request->description;
 
-        dd($data);
+        // dd($data);
 
         $data->save();
 
-        return redirect()->back()->with('success', 'File uploaded successfully');
+        return redirect()->back()->with('success_message', 'File uploaded successfully');
     }
 
     /**

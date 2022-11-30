@@ -24,6 +24,8 @@ class CreateStudentsTable extends Migration
             $table->string('year');
             $table->string('email');
             $table->string('phone');
+            $table->string('bank_name')->nullable();
+            $table->string('sort_code')->nullable();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('supervisor_id')->nullable()->constrained('supervisors');
             $table->foreignId('company_id')->nullable()->constrained('companies');

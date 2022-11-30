@@ -1,6 +1,6 @@
 @extends('backend.students.include.app')
 
-@section('content')
+
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -15,14 +15,16 @@
 
             <div class="col-sm-12">
                 <div class="card">
-                    <iframe src="assets/{{$pdf->pdf_file}}"  height="100%" width="100%" />
+                        {{-- <iframe src="/assets/{{$data->pdf_file}}"> --}}
+
+                            <iframe src="{{ asset('assets/'.$data->pdf_file) }}" frameborder="0" width="90%" height="700px"></iframe>
                 </div>
             </div>
 
         </div>
         <!-- Page end  -->
     </div>
-@endsection
+
 @endsection
 
 @section('title')
